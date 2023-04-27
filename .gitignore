@@ -1,0 +1,5 @@
+.DS_Store
+
+# 过滤 build 文件夹下的文件，但是保留小鹤双拼的二进制码表
+/build/*
+!/build/flypy*bin
