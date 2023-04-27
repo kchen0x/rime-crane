@@ -1,0 +1,36 @@
+# encoding: utf-8
+---
+recipe:
+  Rx: others/recipes/full
+  args:
+  description: >-
+    完整安装、更新
+install_files: >-
+  cn_dicts/8105.dict.yaml
+  cn_dicts/41448.dict.yaml
+  cn_dicts/base.dict.yaml
+  cn_dicts/ext.dict.yaml
+  cn_dicts/tencent.dict.yaml
+  cn_dicts/others.dict.yaml
+  en_dicts/en.dict.yaml
+  en_dicts/en_ext.dict.yaml
+  en_dicts/cn_en.dict.yaml
+  opencc/emoji.json
+  opencc/emoji.txt
+  opencc/others.txt
+  default.yaml
+  squirrel.yaml
+  rime_ice.schema.yaml
+  rime_ice.dict.yaml
+  double_pinyin.schema.yaml
+  double_pinyin_mspy.schema.yaml
+  double_pinyin_flypy.schema.yaml
+  symbols_v.yaml
+  symbols_caps_v.yaml
+  liangfen.schema.yaml
+  liangfen.dict.yaml
+  melt_eng.schema.yaml
+  melt_eng.dict.yaml
+  rime.lua
+  custom_phrase.txt
+  zh-hans-t-essay-bgw.gram
