@@ -11,10 +11,9 @@ config_version: '2023-04-11'
 
 # 方案列表「方案选单」
 schema_list:
+  - schema: flypy
   - schema: rime_ice
-  - schema: double_pinyin
   - schema: double_pinyin_flypy
-  - schema: double_pinyin_mspy
 
 
 # 菜单
@@ -55,11 +54,14 @@ switcher:
 # clear        清除未上屏内容，然后切换到英文
 # inline_ascii 切换到临时英文模式，按回车上屏后回到中文状态
 # noop         屏蔽快捷键，不切换中英，但不要屏蔽 CapsLock
+
+# 可用的按键有 Caps_Lock, Shift_L, Shift_R, Control_L, control_R
+# Mac 系统上的鼠须管不能区分左、右，因此只有对 Shift_L, Control_L 的设定起作用
 ascii_composer:
   good_old_caps_lock: true  # true | false
   switch_key:
-    Caps_Lock: clear      # commit_code | commit_text | clear
-    Shift_L: commit_code  # commit_code | commit_text | inline_ascii | clear | noop
+    Caps_Lock: noop       # commit_code | commit_text | clear
+    Shift_L: inline_ascii # commit_code | commit_text | inline_ascii | clear | noop
     Shift_R: noop         # commit_code | commit_text | inline_ascii | clear | noop
     Control_L: noop       # commit_code | commit_text | inline_ascii | clear | noop
     Control_R: noop       # commit_code | commit_text | inline_ascii | clear | noop

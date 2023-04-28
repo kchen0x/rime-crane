@@ -1,5 +1,22 @@
 .DS_Store
+**/.idea/
+.vscode/
 
 # 过滤 build 文件夹下的文件，但是保留小鹤双拼的二进制码表
 /build/*
 !/build/flypy*bin
+
+# 过滤个人配置
+*.userdb/
+installation.yaml
+user.yaml
+*.custom.yaml
+
+others/script/scel2txt/out/*
+others/script/scel2txt/scel/*
+
+*private*
+
+rime_console
+rime_deployer
+rime_patch
