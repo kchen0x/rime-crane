@@ -6,14 +6,14 @@
 
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2023-04-11'
+config_version: '2023-08-07'
 
 
-# 方案列表「方案选单」
+# 方案列表
 schema_list:
-  - schema: flypy
-  - schema: rime_ice
-  - schema: double_pinyin_flypy
+  - schema: flypy                  # 小鹤音形
+  - schema: rime_ice               # 雾凇拼音（全拼）
+  - schema: double_pinyin_flypy    # 小鹤双拼
 
 
 # 菜单
@@ -31,8 +31,9 @@ switcher:
     - Control+grave
     # - Alt+grave
     - Control+Shift+grave
-  save_options:  # 开关记忆，从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
+  save_options:  # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
     - ascii_punct
+    - full_shape
     - traditionalization
     - emoji
   fold_options: true            # 呼出时是否折叠，多方案时建议折叠 true ，一个方案建议展开 false
@@ -48,15 +49,12 @@ switcher:
 # macOS 偏好设置的优先级更高，如果勾选【使用大写锁定键切换“ABC”输入法】则始终会切换输入法。
 #
 # 切换中英：
-# 不同的选项表示：打字打到一半时按下了 CapsLock、Shift、Control 后： 
+# 不同的选项表示：打字打到一半时按下了 CapsLock、Shift、Control 后：
 # commit_code  上屏原始的编码，然后切换到英文
 # commit_text  上屏拼出的词句，然后切换到英文
 # clear        清除未上屏内容，然后切换到英文
 # inline_ascii 切换到临时英文模式，按回车上屏后回到中文状态
 # noop         屏蔽快捷键，不切换中英，但不要屏蔽 CapsLock
-
-# 可用的按键有 Caps_Lock, Shift_L, Shift_R, Control_L, control_R
-# Mac 系统上的鼠须管不能区分左、右，因此只有对 Shift_L, Control_L 的设定起作用
 ascii_composer:
   good_old_caps_lock: true  # true | false
   switch_key:
@@ -155,8 +153,8 @@ punctuator:
 # 此处配置所有方案通用的；各方案中另设专有的，比如全拼的拼字用 u，双拼的拼字用 L
 recognizer:
   patterns:
-    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"                            # 自带的，email 正则
-    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"                           # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符
+    email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"   # 自带的，email 正则
+    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"  # 自带的，大写字母开头后，可以输入[-_+.'0-9A-Za-z]这些字符（和雾凇有些冲突，关闭了）
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"  # 自带的，URL 正则
     # 一些不直接上屏的配置示例：
     # url_2: "^[A-Za-z]+[.].*"     # 句号不上屏，支持 google.com abc.txt 等网址或文件名，使用句号翻页时需要注释掉
@@ -166,9 +164,9 @@ recognizer:
 
 # 快捷键
 key_binder:
-  # Lua 配置: 以词定字（上屏当前词句的第一个或最后一个字）
-  select_first_character:
-  select_last_character: "grave"
+  # Lua 配置: 以词定字（上屏当前词句的第一个或最后一个字），和中括号翻页有冲突
+  select_first_character: "bracketleft"  # 左中括号 [
+  select_last_character: "bracketright"  # 右中括号 ]
 
   bindings:
     # Tab / Shift+Tab 切换光标至下/上一个拼音
@@ -229,6 +227,7 @@ key_binder:
 # https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
 # （没有 Command 键，不支持）
 # accept 和 send 可用字段除 A-Za-z0-9 外，还包含以下键盘上实际有的键：
+# （区分大小写）
 # BackSpace	退格
 # Tab	水平定位符
 # Linefeed	换行

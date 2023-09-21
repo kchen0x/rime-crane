@@ -16,7 +16,7 @@
 #          这样小字表里存在的字按权重靠前排列，大字表殿后，生僻字自动就排在末尾。
 ---
 name: 41448
-version: "2023-03-30"
+version: "2023-07-24"
 sort: by_weight
 ...
 # 㕶	n
@@ -24,6 +24,8 @@ sort: by_weight
 # 𠮾	n
 # 𧗈	n
 # 呣	m
+# 扩充
+咁	gan
 # +_+
 啊	a
 嗄	a
@@ -7094,6 +7096,7 @@ sort: by_weight
 𪘐	e
 𪙯	e
 𫫇	e
+欸	ei
 誒	ei
 诶	ei
 䅰	en
@@ -8345,6 +8348,7 @@ sort: by_weight
 尬	ga
 旮	ga
 玍	ga
+轧	ga
 錷	ga
 钆	ga
 魀	ga
@@ -14801,6 +14805,7 @@ sort: by_weight
 慻	juan
 捐	juan
 捲	juan
+朘	juan
 桊	juan
 涓	juan
 淃	juan
@@ -27297,6 +27302,7 @@ sort: by_weight
 授	shou
 收	shou
 涭	shou
+熟	shou
 狩	shou
 獣	shou
 獸	shou
@@ -32739,6 +32745,7 @@ sort: by_weight
 侾	xiao
 俲	xiao
 傚	xiao
+削	xiao
 効	xiao
 呺	xiao
 咲	xiao
@@ -33087,6 +33094,7 @@ sort: by_weight
 蟹	xie
 蠍	xie
 蠏	xie
+血	xie
 衺	xie
 褉	xie
 褻	xie
@@ -35299,6 +35307,7 @@ sort: by_weight
 冶	ye
 叶	ye
 吔	ye
+咽	ye
 啘	ye
 嘢	ye
 噎	ye
@@ -39239,6 +39248,7 @@ sort: by_weight
 嫃	zhen
 寊	zhen
 屒	zhen
+帧	zhen
 帪	zhen
 弫	zhen
 抮	zhen
@@ -39409,7 +39419,6 @@ sort: by_weight
 峥	zheng
 崝	zheng
 崢	zheng
-帧	zheng
 幀	zheng
 征	zheng
 徰	zheng
@@ -40543,6 +40552,7 @@ sort: by_weight
 専	zhuan
 專	zhuan
 撰	zhuan
+沌	zhuan
 灷	zhuan
 瑑	zhuan
 瑼	zhuan
@@ -40705,6 +40715,7 @@ sort: by_weight
 凖	zhun
 埻	zhun
 宒	zhun
+屯	zhun
 準	zhun
 稕	zhun
 窀	zhun
