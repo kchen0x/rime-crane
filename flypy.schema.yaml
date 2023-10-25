@@ -18,14 +18,14 @@ punctuator:
 switches:
   - name: ascii_mode
     reset: 0
-   # states: [ 中文, 英文 ]
+    states: [ 中, A ]
   - name: full_shape
-   # states: [ 半角, 全角 ]
+    states: [ 半, 全 ]
   - name: simplification
-   # states: [ 简, 繁 ]
+    states: [ 简, 繁 ]
     reset: 0
   - name: ascii_punct
-   # states: [ 。，, ．， ]
+    states: [ 。，, ．， ]
     reset: 0
 
 engine:
@@ -170,7 +170,8 @@ menu:
 
 style:
   color_scheme: crane
-  horizontal: true  # 候选词为横排，竖排为 false
+  color_scheme_dark: crane
+  horizontal: true
 
 preset_color_schemes:
   # 凇鹤版小鹤双拼输入法皮肤
@@ -178,12 +179,12 @@ preset_color_schemes:
     name: "雪下鹤"
     author: "水猫 <kchen0x@gmail.com>"
     back_color: 0xE3E3E3                    # 候选条背景色
-    border_color_width: 1
+    border_color_width: 2
     border_color: 0x545554                  # 边框色
-    border_height: 8                        # 窗口边界高度，大于圆角半径才生效
-    border_width: 8                         # 窗口边界宽度，大于圆角半径才生效
+    border_height: 4                        # 窗口边界高度，大于圆角半径才生效
+    border_width: 4                         # 窗口边界宽度，大于圆角半径才生效
     candidate_format: "\u2005%@\u2005"      # 取消掉候选序号，用 1/6 em 空格 U+2005 包围候选词，这样更边距更舒服
-    corner_radius: 6                        # 窗口圆角半径
+    corner_radius: 4                        # 窗口圆角半径
     hilited_text_color: 0x000000            # 编码高亮
     hilited_back_color: 0xffffff            # 编码背景高亮
     hilited_candidate_label_color: 0xeeeeee # 首选编号色
@@ -194,10 +195,11 @@ preset_color_schemes:
     candidate_text_color: 0x000000                    # 次选文字色
     candidate_back_color: 0xffffff                    # 次选背景色
     comment_text_color: 0x555555                      # 次选提示字母色
-    horizontal: true                        # 候选窗横向显示
-    font_point: 18                          # 候选窗文字字号
-    label_font_point: 14                    # 候选窗编号字号
-    inline_preedit: true                    # 开启嵌入编码
+    # horizontal: true                        # 候选窗横向显示
+    font_point: 16                          # 候选窗文字字号
+    label_font_point: 12                    # 候选窗编号字号
+    # inline_preedit: true                    # 开启嵌入编码
+    # inline_candidate: true                  # 开启嵌入候选
     text_color: 0x333333                    # 编码行文字颜色，24位色值，16进制，BGR顺序
 
   # 原版小鹤双拼输入法皮肤
