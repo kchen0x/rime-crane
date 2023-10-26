@@ -15,8 +15,8 @@ function M.init(env)
     M.date = config:get_string(env.name_space .. '/date') or 'rq'
     M.time = config:get_string(env.name_space .. '/time') or 'sj'
     M.week = config:get_string(env.name_space .. '/week') or 'xq'
-    M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
-    M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
+    -- M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
+    -- M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
 end
 
 function M.func(input, seg, env)
