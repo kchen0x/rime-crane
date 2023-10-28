@@ -51,8 +51,8 @@ engine:
     - table_translator@custom_phraseVD    # 「置顶词库」码表
     - table_translator@custom_phraseXT    # 「简辅库」码表
     - table_translator@custom_phraseYH    # 「用户词库」码表
-    - table_translator@custom_phraseQMZ   # 「全码字库」码表
-    - reverse_lookup_translator
+    # - table_translator@custom_phraseQMZ   # 「全码字库」码表，不熟练时可开启增加拆词熟练度
+    # - reverse_lookup_translator
     - history_translator@history          # 重复上屏
     - lua_translator@calculator_translator
   filters:
@@ -130,12 +130,12 @@ custom_phraseQMZ:
   initial_quality: -1       # 和系统词重码时居后
 
 # 反查词库
-reverse_lookup:
-  dictionary: flypydz    # 应挂载词库 flypydz.dict.yaml，但作者仅提供编译后的二进制文件 flypydz.prism.bin/flypydz.reverse.bin/flypydz.table.bin
-  comment_format:
-   # - xform/^/〔/
-   # - xform/$/〕/
-    - xform/ / /
+# reverse_lookup:
+#   dictionary: flypydz    # 应挂载词库 flypydz.dict.yaml，但作者仅提供编译后的二进制文件 flypydz.prism.bin/flypydz.reverse.bin/flypydz.table.bin
+#   comment_format:
+#    # - xform/^/〔/
+#    # - xform/$/〕/
+#     - xform/ / /
 
 # 快捷键设置
 key_binder:
@@ -145,7 +145,7 @@ key_binder:
     - {accept: bracketright, send: bracketright, when: has_menu}    # 注销]下翻页
     - {accept: comma, send: comma, when: paging}                    # 注销逗号翻页
     - {accept: period, send: period, when: has_menu}                # 注销句号翻页
-    - {accept: semicolon, send: 2, when: has_menu}                  # 分号次选
+    - {accept: semicolon, send: '2', when: has_menu}                # 分号次选
   #  - {accept: Release+semicolon, send: semicolon, when: has_menu} # 如启用此行，则分号引导符号功能无效
     - {accept: Release+period, send: period, when: composing}       # 句号顶屏
     - {accept: Release+comma, send: comma, when: composing}         # 逗号顶屏
