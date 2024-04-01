@@ -2,14 +2,16 @@
 # encoding: utf-8
 
 schema:
-  schema_id: flypy
+  schema_id: xhup
   name: 小鹤音形
-  version: "10.9.4"
+  version: "v10.9k"
   author:
     - 方案设计：何海峰 <flypy@qq.com>
     - 方案调整：水猫 <kchen0x@gmail.com>
   description: |
     小鹤音形主码表
+  dependencies:
+    - xhup_reverse
 
 # 使用雾凇默认的标点符号
 punctuator:
@@ -30,6 +32,7 @@ switches:
 
 engine:
   processors:
+    - lua_processor@*xhup/shortcut_processor
     - ascii_composer
     - recognizer
     - key_binder
@@ -46,15 +49,12 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - table_translator                    # 码表
-    - lua_translator@date_translator      # Lua 日期
-    - table_translator@custom_phraseVD    # 「置顶词库」码表
-    - table_translator@custom_phraseXT    # 「简辅库」码表
-    - table_translator@custom_phraseYH    # 「用户词库」码表
-    # - table_translator@custom_phraseQMZ   # 「全码字库」码表，不熟练时可开启增加拆词熟练度
-    # - reverse_lookup_translator
-    - history_translator@history          # 重复上屏
-    - lua_translator@calculator_translator
+    - table_translator                          # 码表
+    - lua_translator@*xhup/date_translator      # Lua 日期
+    - lua_translator@*xhup/time_translator      # Lua 时间
+    - lua_translator@*xhup/shortcut_translator  # Lua 直通车
+    - reverse_lookup_translator
+    - history_translator@history                # 重复上屏
   filters:
     - simplifier
     - simplifier@simplification
@@ -66,14 +66,14 @@ speller:
   initials: ';abcdefghijklmnopqrstuvwxyz'     # 可以作为第一位的引导词
   finals: "'"
   # delimiter: " '"
-  # max_code_length: 4
-  # auto_select: true   #顶字上屏
-  # auto_select_pattern: ^;.$|^\w{4}$
-  # auto_clear: auto #manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
+  max_code_length: 4
+  auto_select: true   #顶字上屏
+  auto_select_pattern: ^;.$|^\w{4}$
+  auto_clear: max_length #manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
 
 # 翻译器，小鹤音形
 translator:
-  dictionary: flypy               # 应挂载词库 flypy.dict.yaml，但作者仅提供编译后的二进制文件 flypy.prism.bin/flypy.reverse.bin/flypy.table.bin
+  dictionary: xhup                # 挂载词库 xhup.dict.yaml
   enable_charset_filter: false
   enable_sentence: false          # 是否启用造句模式
   enable_completion: false        # 编码提示开关
@@ -93,49 +93,13 @@ simplification:
   option_name: simplification
   tips: all                     # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
 
-# 置顶词库
-custom_phraseVD:
-  dictionary: ""
-  user_dict: cn_dicts/flypy_top
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: 0        # 用户词和系统词重码 置顶
-
-# 系统词库
-custom_phraseXT:
-  dictionary: ""
-  user_dict: cn_dicts/flypy_sys
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: -1       # 本表词和系统词重码居后
-
-# 用户词库
-custom_phraseYH:
-  dictionary: ""
-  user_dict: cn_dicts/flypy_user
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: -1       # 用户词和系统词重码居后
-
-# 全码字词库
-custom_phraseQMZ:
-  dictionary: ""
-  user_dict: cn_dicts/flypy_full
-  db_class: stabledb
-  enable_sentence: false
-  enable_completion: false
-  initial_quality: -1       # 和系统词重码时居后
-
 # 反查词库
-# reverse_lookup:
-#   dictionary: flypydz    # 应挂载词库 flypydz.dict.yaml，但作者仅提供编译后的二进制文件 flypydz.prism.bin/flypydz.reverse.bin/flypydz.table.bin
-#   comment_format:
-#    # - xform/^/〔/
-#    # - xform/$/〕/
-#     - xform/ / /
+reverse_lookup:
+  dictionary: xhup_reverse
+  comment_format:
+   # - xform/^/〔/
+   # - xform/$/〕/
+    - xform/ / /
 
 # 快捷键设置
 key_binder:

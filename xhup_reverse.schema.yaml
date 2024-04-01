@@ -1,0 +1,54 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: xhup_reverse
+  name: 小鹤音形反查
+  version: "v10.9k"
+  author:
+    - 方案设计：何海峰 <flypy@qq.com>
+    - 方案调整：水猫 <kchen0x@gmail.com>
+  description: |
+    小鹤音形的反查词库
+
+switches:
+  - name: ascii_mode
+    reset: 0
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: ';zyxwvutsrqponmlkjihgfedcba`'
+  initials: '`abcdefghijklmnopqrstuvwxyz;'
+
+translator:
+  dictionary: xhup_reverse
+  enable_charset_filter: false
+  enable_sentence: false
+  enable_completion: true
+  enable_user_dict: false
+  disable_user_dict_for_patterns:
+    - "^z.*$"
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default

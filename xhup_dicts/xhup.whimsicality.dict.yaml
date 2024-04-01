@@ -1,0 +1,33 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#---config@码表分类=主码-2
+#---config@码表别名=1.1 随心码
+
+---
+name: openfly.whimsicality
+version: "v10.9k"
+sort: by_weight
+use_preset_vocabulary: false
+...
+辨	bmld
+辫	bmls
+单元	dye
+回忆	hyx
+计	jiyd
+觉得	jdi
+简洁	jjd
+精力	jlv
+基于	jya
+截至	jva
+距离	jlw
+记忆	jyx
+刻意	kys
+梳理	ulw
+事实	uub
+智	viud
+哲理	vlw
+置顶	vdd
+指示	vue
+指挥	vhf
+想想	xxm
+音形	yxk

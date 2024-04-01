@@ -11,7 +11,7 @@ config_version: '2023-08-07'
 
 # 方案列表
 schema_list:
-  - schema: flypy                  # 小鹤音形
+  - schema: xhup                   # 小鹤音形
   - schema: rime_ice               # 雾凇拼音（全拼）
   - schema: double_pinyin_flypy    # 小鹤双拼
 

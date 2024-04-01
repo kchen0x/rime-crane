@@ -1,0 +1,39 @@
+﻿# Rime dictionary
+# encoding: utf-8
+#---config@码表分类=主码-3
+#---config@码表别名=1.2 快符
+
+---
+name: openfly.fast.symbols
+version: "v10.9k"
+sort: by_weight
+use_preset_vocabulary: false
+...
+：	;	90
+；	;
+：“	;q
+？	;w
+（	;e
+）	;r
+@	;t
+《	;y
+》	;u
+「」	;o
+『』	;p
+！	;a
+……	;s
+、	;d
+·	;g
+《》	;h
+“”	;j
+（）	;k
+〔〕	;l
+“	;z
+→	;x
+”	;c
+——	;v
+_	;b
+
+https://flypy.com	xhgw
+http://flypy.ysepan.com	xhwp
+https://xgr313l2jy.k.topthink.com/@xhrm/home.html	xhrm

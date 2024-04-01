@@ -1,0 +1,11 @@
+# Rime dictionary
+# encoding: utf-8
+#---config@码表分类=主码-用户置顶码表
+#---config@码表别名=用户
+
+---
+name: xhup.user
+version: "v10.9k"
+sort: by_weight
+use_preset_vocabulary: false
+...
