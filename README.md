@@ -70,26 +70,24 @@ http://www.keyboard-layout-editor.com/#/
 
 |编码|功能|
 |-|-|
-|oei|开关二简词|
 |ojf|〔简/繁〕切换|
 
 ## 长期维护词库
 
-- 小鹤音形的主码表：文件 `flypy.dict.yaml`
-- 「置顶词库」码表：文件 `cn_dicts/flypy_top.txt`
-    - 置顶全码词，如果熟悉全码词的简码可以关闭（默认开启），应该尽量练习有简打简。
-- 「简辅库」码表：文件 `cn_dicts/flypy_sys.txt`
-    1. 快符
-    2. 次选
-    3. 填空
-    4. 表外字
-    5. 符号
-    6. 随心
-    7. 二重简码
-- 「用户词库」码表：文件 `cn_dicts/flypy_user.txt`
-    - 用来放用户自定义的词汇、全码词和二简提示（一重/二重）
-- 「全码字库」码表：文件 `cn_dicts/flypy_full.txt`
-    - 全码字在四码时出现在候选词中，不熟练时可开启增加拆词熟练度（默认关闭），应该尽量练习有简打简。
+- 小鹤音形的主码表：文件 `xhup.dict.yaml`，其中按需加载的码表分别如下：
+  - "xhup_dicts/xhup.user.top"          # 用户置顶码表：可以按需自行添加置顶词汇
+  - "xhup_dicts/xhup.primary"           # -0- 首选字词
+  - "xhup_dicts/xhup.secondary"         # 1.1 次选字词
+  - "xhup_dicts/xhup.whimsicality"      # 1.1 随心码
+  - "xhup_dicts/xhup.fast.symbols"      # 1.2 快符
+  - "xhup_dicts/xhup.single.code"       # 2.1 一简词：可以根据自己的情况选择使用一简词还是二重简码
+  - "xhup_dicts/xhup.off-table"         # 2.2 表外字
+  - "xhup_dicts/xhup.full.code.words"   # 2.3 全码词
+  # - "xhup_dicts/xhup.symbols"           # 符号
+  # - "xhup_dicts/xhup.full.code.chars"   # 全码字：在四码时出现在候选词中，不熟练时可开启增加拆词熟练度（默认关闭），应该尽量练习有简打简。
+  - "xhup_dicts/xhup.user"              # 用户码表
+  - "xhup_dicts/xhup.short.hints"       # 简码提示
+  # - "xhup_dicts/xhup.secondary.simple"   # 二重简码：默认开启的是一简词
 
 ## 使用说明
 
@@ -99,7 +97,7 @@ http://www.keyboard-layout-editor.com/#/
 
 将仓库所有文件复制粘贴进去就好了。
 
-更新词库，手动覆盖 `cn_dicts` `en_dcits` `opencc` `build` 四个文件夹。
+更新词库，手动覆盖 `xhup_dicts` `en_dcits` `opencc` `build` 四个文件夹。
 
 ### 软链接安装（推荐）
 
