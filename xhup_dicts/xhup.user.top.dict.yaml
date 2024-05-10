@@ -9,7 +9,9 @@ version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
-
+集成	jiig
+告警	gcjk
+基座	jizo
 
 # 下面是全码词中的固顶词汇 #固
 按时	anui

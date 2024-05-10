@@ -115,6 +115,7 @@ short_hints:
 # 反查词库
 xhup_reverse:
   dictionary: xhup_reverse
+  tips: "〔万能〕"
   comment_format:
    # - xform/^/〔/
    # - xform/$/〕/

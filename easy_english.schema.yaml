@@ -1,0 +1,87 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: easy_english
+  name: 英语词库
+  version: "0.18"
+  author:
+  description: |
+
+switches:
+  - name: ascii_mode
+    reset: 0
+  - name: full_shape
+    reset: 0
+  - name: simplification
+    reset: 0
+  - name: ascii_punct
+    reset: 0
+  - name: extended_charset
+    reset: 1
+  - name: ascii_mode
+  #↓以下1條爲设置默认中英文状态（0为默认中文，1为默认英文）
+    reset: 0
+    states: [ 中文, 英文 ]
+  - name: _hide_candidate  
+    reset: 0 #默认开启这个开关，隐藏候选栏
+  - name: _hide_key_hint  
+    reset: 1 #默认开启这个开关，隐藏按键助记符号
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+#    - fluid_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator # 没有其他结果时，创建一个与编码串一样的候选项
+    - punct_translator
+    - script_translator
+    - table_translator
+  filters:
+    - simplifier
+    - uniquifier
+
+
+speller:
+  alphabet: '/`\ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?''_:'
+  # initials: '/`\ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,.?''_:-'
+  delimiter: ";"
+
+
+translator:
+  dictionary: easy_english
+  user_dict: easy_english
+  db_class: tabledb
+  enable_sentence: true
+  enable_encoder: true
+  encode_commit_history: false
+  enable_completion: true
+  enable_user_dict: true
+  # preedit_format:
+  #   - xlit|_| |
+  # comment_format:
+  #   - xlit|_| |
+
+
+punctuator:
+  import_preset: default
+
+# key_binder:
+menu:
+  page_size: 5 #候选数量
+
+recognizer:
+  import_preset: default

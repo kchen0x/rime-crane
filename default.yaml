@@ -9,8 +9,11 @@ config_version: '2024-02-05'
 # 方案列表
 schema_list:
   - schema: xhup                   # 小鹤音形
-  - schema: rime_ice               # 雾凇拼音（全拼）
-  - schema: double_pinyin_flypy    # 小鹤双拼
+  # - schema: rime_ice               # 雾凇拼音（全拼）
+  # - schema: double_pinyin_flypy    # 小鹤双拼
+  - schema: tiger                  # 虎码单字版
+  - schema: tigress                # 虎码字词版
+  # - schema: PY_c                   # 拼音反查
 
 
 # 菜单
@@ -30,7 +33,7 @@ switcher:
     # - Alt+grave
   save_options:  # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
     - ascii_punct
-    - traditionalization
+    - simplification
     - emoji
     - full_shape
     - search_single_char

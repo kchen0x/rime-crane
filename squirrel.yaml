@@ -88,12 +88,15 @@ style:
   spacing: 10
   #candidate_format: '%c. %@'
   #base_offset: 6
-  font_face: 'Lucida Grande'
-  font_point: 21
-  #label_font_face: 'Lucida Grande'
-  label_font_point: 18
-  #comment_font_face: 'Lucida Grande'
-  comment_font_point: 18
+  # #候选字体
+  font_face: "Consolas, Segoe UI Emoji, Noto Color Emoji, LXGW WenKai, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/font_point: 15 #主字体字号
+  # #滤镜内容字体
+  comment_font_face: "Consolas, Segoe UI Emoji, Noto Color Emoji, TumanPUA, LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/comment_font_point: 15 # 滤镜内容字号
+  # #候选前编号标志字体
+  label_font_face: "LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/label_font_point: 15 #候选前编号标志字号
 
 
 # 皮肤列表
@@ -104,11 +107,11 @@ preset_color_schemes:
     author: 雨過之後、佛振
     # 如果将字体设置为 PingFangSC-Regular
     # 会让 🈶🈚️🉑🈲🉐 这几个 Emoji 失去彩色效果，留空反而可以显示。。。
-    font_face: ""                   # 字体及大小
+    # font_face: ""                   # 字体及大小
     font_point: 18
-    label_font_face: "Helvetica"    # 序号字体及大小
+    # label_font_face: "Helvetica"    # 序号字体及大小
     label_font_point: 12
-    comment_font_face: "Helvetica"  # 注字体及大小
+    # comment_font_face: "Helvetica"  # 注字体及大小
     comment_font_point: 16
     # candidate_list_layout: stacked        # 候选项排列方向 stacked(默认) | linear
     # text_orientation: horizontal          # 文字排列方向 horizontal(默认) | vertical

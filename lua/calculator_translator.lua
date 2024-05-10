@@ -63,7 +63,12 @@ inf = math.huge
 MAX_INT = math.maxinteger
 MIN_INT = math.mininteger
 pi = math.pi
-sqrt = math.sqrt
+
+sqrt = function (x, n)
+  n = n or 2
+  return x^(1/n)
+end
+
 exp = math.exp
 e = exp(1)
 ln = math.log

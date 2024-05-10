@@ -1,0 +1,16 @@
+{
+  "name": "hu_cf",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": {
+      "type": "text",
+      "file": "hu_cf.txt"
+    }
+  },
+  "conversion_chain": [{
+    "dict": {
+      "type": "text",
+      "file": "hu_cf.txt"
+    }
+  }]
+}

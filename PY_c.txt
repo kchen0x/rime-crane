@@ -1,0 +1,13 @@
+# Rime table
+#@/db_name	PY_c
+#@/db_type	tabledb
+#@/rime_version	1.8.5
+#@/tick	12
+不错	bu cuo	4
+你	ni	3
+试试看	shi shi kan	4
+双拼	shuang pin	3
+效果	xiao guo	4
+小河	xiao he	1
+小鹤	xiao he	2
+小河双拼	xiao he shuang pin	1

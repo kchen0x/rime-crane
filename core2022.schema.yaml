@@ -1,0 +1,10 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: core2022
+  name: "字集过滤·伪方案·勿用"
+
+translator:
+  dictionary: core2022
+  enable_user_dict: false
