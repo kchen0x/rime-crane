@@ -4,7 +4,7 @@
 
 ---
 name: xhup
-version: "v10.9k"
+version: "v10.9s"
 
 import_tables:
   - "xhup_dicts/xhup.user.top"          # 用户置顶码表
@@ -12,12 +12,11 @@ import_tables:
   - "xhup_dicts/xhup.secondary"         # 1.1 次选字词
   - "xhup_dicts/xhup.whimsicality"      # 1.1 随心码
   - "xhup_dicts/xhup.fast.symbols"      # 1.2 快符
+  # - "xhup_dicts/xhup.secondary.simple"   # 二重简码
   - "xhup_dicts/xhup.single.code"       # 2.1 一简词
   - "xhup_dicts/xhup.off-table"         # 2.2 表外字
   - "xhup_dicts/xhup.full.code.words"   # 2.3 全码词
   # - "xhup_dicts/xhup.symbols"           # 符号
   # - "xhup_dicts/xhup.full.code.chars"   # 全码字
   - "xhup_dicts/xhup.user"              # 用户码表
-  - "xhup_dicts/xhup.short.hints"       # 简码提示
-  # - "xhup_dicts/xhup.secondary.simple"   # 二重简码
 ...

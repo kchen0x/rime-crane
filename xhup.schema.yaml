@@ -4,7 +4,7 @@
 schema:
   schema_id: xhup
   name: 小鹤音形
-  version: "v10.9k"
+  version: "v10.9s"
   author:
     - 方案设计：何海峰 <flypy@qq.com>
     - 方案调整：水猫 <kchen0x@gmail.com>
@@ -29,6 +29,9 @@ switches:
   - name: ascii_punct
     states: [ 。，, ．， ]
     reset: 0
+  - name: short_hints  #滤镜
+    reset: 1
+    states: [ 🙈, 🐵 ]
 
 engine:
   processors:
@@ -53,11 +56,12 @@ engine:
     - lua_translator@*xhup/date_translator      # Lua 日期
     - lua_translator@*xhup/time_translator      # Lua 时间
     - lua_translator@*xhup/shortcut_translator  # Lua 直通车
-    - reverse_lookup_translator
+    - reverse_lookup_translator@xhup_reverse
     - history_translator@history                # 重复上屏
   filters:
     - simplifier
     - simplifier@simplification
+    - simplifier@short_hints #滤镜
     - uniquifier
 
 # 拼写设定
@@ -93,8 +97,23 @@ simplification:
   option_name: simplification
   tips: all                     # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
 
+short_hints:
+  opencc_config: short_hints.json
+  option_name: short_hints
+  show_in_comment: true #作为注解在后面显示
+  comment_format:
+   - xform/^/〔/
+   - xform/$/〕/
+  tips: all
+  # tags:
+  #   - abc
+  #   - tiger
+  #   - tigress
+  #   - xhup
+    # - reverse_lookup
+
 # 反查词库
-reverse_lookup:
+xhup_reverse:
   dictionary: xhup_reverse
   comment_format:
    # - xform/^/〔/

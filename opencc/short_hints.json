@@ -1,0 +1,18 @@
+{
+  "name": "简码提示",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": {
+      "type": "text",
+      "file": "short_hints.txt"
+    }
+  },
+  "conversion_chain": [
+    {
+      "dict": {
+        "type": "text",
+        "file": "short_hints.txt"
+      }
+    }
+  ]
+}

@@ -15,8 +15,8 @@ function M.init(env)
     M.date = config:get_string(env.name_space .. '/date') or 'rq'
     M.time = config:get_string(env.name_space .. '/time') or 'sj'
     M.week = config:get_string(env.name_space .. '/week') or 'xq'
-    -- M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
-    -- M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
+    M.datetime = config:get_string(env.name_space .. '/datetime') or 'dt'
+    M.timestamp = config:get_string(env.name_space .. '/timestamp') or 'ts'
 end
 
 function M.func(input, seg, env)
@@ -48,6 +48,7 @@ function M.func(input, seg, env)
     elseif (input == M.datetime) then
         local current_time = os.time()
         yield_cand(seg, os.date('%Y-%m-%dT%H:%M:%S+08:00', current_time))
+        yield_cand(seg, os.date('%Y-%m-%d %H:%M:%S', current_time))
         yield_cand(seg, os.date('%Y%m%d%H%M%S', current_time))
 
     -- 时间戳（十位数，到秒，示例 1650861664）

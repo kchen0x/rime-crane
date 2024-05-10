@@ -1,11 +1,11 @@
 ﻿# Rime dictionary
 # encoding: utf-8
-#---config@码表分类=辅码码表
-#---config@码表别名=二重简码
+# ---config@码表分类=辅码码表
+# ---config@码表别名=二重简码
 
 ---
 name: xhup.secondary.short
-version: "v10.9k"
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -23,7 +23,7 @@ use_preset_vocabulary: false
 道	dc
 逗	dz
 嗯	e
-发	f
+非	f
 份	ff
 疯	fg
 复	fu

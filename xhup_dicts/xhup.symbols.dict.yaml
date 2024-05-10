@@ -5,7 +5,7 @@
 
 ---
 name: xhup.symbols
-version: "v10.9k"
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -15,7 +15,6 @@ use_preset_vocabulary: false
 ！	oa
 ……	os
 、	od
-→	of
 “	oz
 ”	oc
 （	oh

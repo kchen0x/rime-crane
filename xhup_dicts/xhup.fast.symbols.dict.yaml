@@ -4,8 +4,8 @@
 #---config@码表别名=1.2 快符
 
 ---
-name: openfly.fast.symbols
-version: "v10.9k"
+name: xhup.fast.symbols
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...

@@ -6,6 +6,7 @@
 
 - 雾凇：功能齐全，词库体验良好，长期更新修订。
 - 凇鹤：去除了雾凇中的其他双拼方案，增加了对鹤形的支持，对接官方的小鹤音形。
+- tiger-code 分支中现可使用虎码了。
 
 [Rime 配置：雾凇拼音 | 长期维护的简体词库](https://github.com/iDvel/rime-ice) 是本方案全拼/双拼部分的基础方案和词库方案。
 
@@ -74,20 +75,21 @@ http://www.keyboard-layout-editor.com/#/
 
 ## 长期维护词库
 
-- 小鹤音形的主码表：文件 `xhup.dict.yaml`，其中按需加载的码表分别如下：
+```
+- 小鹤音形的主码表：文件 "xhup.dict.yaml"，其中按需加载的码表分别如下：
   - "xhup_dicts/xhup.user.top"          # 用户置顶码表：可以按需自行添加置顶词汇
   - "xhup_dicts/xhup.primary"           # -0- 首选字词
   - "xhup_dicts/xhup.secondary"         # 1.1 次选字词
   - "xhup_dicts/xhup.whimsicality"      # 1.1 随心码
   - "xhup_dicts/xhup.fast.symbols"      # 1.2 快符
+  # - "xhup_dicts/xhup.secondary.simple"   # 二重简码：默认开启的是一简词（二重简码和一简词尽量只开一个）
   - "xhup_dicts/xhup.single.code"       # 2.1 一简词：可以根据自己的情况选择使用一简词还是二重简码
   - "xhup_dicts/xhup.off-table"         # 2.2 表外字
   - "xhup_dicts/xhup.full.code.words"   # 2.3 全码词
   # - "xhup_dicts/xhup.symbols"           # 符号
   # - "xhup_dicts/xhup.full.code.chars"   # 全码字：在四码时出现在候选词中，不熟练时可开启增加拆词熟练度（默认关闭），应该尽量练习有简打简。
   - "xhup_dicts/xhup.user"              # 用户码表
-  - "xhup_dicts/xhup.short.hints"       # 简码提示
-  # - "xhup_dicts/xhup.secondary.simple"   # 二重简码：默认开启的是一简词
+```
 
 ## 使用说明
 

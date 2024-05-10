@@ -9,7 +9,7 @@
 schema:
   schema_id: melt_eng
   name: Easy English Nano
-  version: "2023-07-30"
+  version: "2023-10-17"
   author:
     - Patrick <ipatrickmac@gmail.com>
     - tumuyan <tumuyan@21cn.com>
@@ -47,7 +47,7 @@ speller:
   delimiter: " '"
   algebra:
     # 根据当前所用拼音方案选择 __include 的值
-    # 如果要在补丁中修改 algebra 以适配双拼，请参考 [常见问题](https://github.com/iDvel/rime-ice/issues/133)
+    # 如果要在补丁中（melt_eng.custom.yaml）修改 algebra 以适配双拼，请参考 [常见问题](https://github.com/iDvel/rime-ice/issues/133)
     __include: algebra_rime_ice         # 全拼
     # __include: algebra_double_pinyin  # 自然码双拼
     # __include: algebra_flypy          # 小鹤双拼
@@ -101,6 +101,8 @@ algebra_common:
   - derive/-/hyphen/
   - derive/#/hash/
   - derive/#/number/
+  - derive/#/sharp/
+  - derive/♯/sharp/
   - derive / slash
   - derive/&/and/
   - derive/%/percent/
@@ -110,17 +112,16 @@ algebra_common:
   - derive/[@]//
   - derive/[-]//
   - derive/[_]//
-  # 下面带 ⓘ 的，是为了中英混输词库不派生出纯大写
   # 派生无任何非字母数字字符的拼写
-  - derive/[^a-zA-Z0-9ⓘ]//
+  - derive/[^a-zA-Z0-9]//
   # 禁用非英文、数字开头的编码
-  - erase/^[^a-zA-Z0-9ⓘ].+$/
+  - erase/^[^a-zA-Z0-9].+$/
   # 全小写
   - derive/^.+$/\L$0/
   # 全大写
-  - derive/^(?!ⓘ).+$/\U$0/
+  - derive/^.+$/\U$0/
   # 首字母大写
-  - derive/^(?!ⓘ)./\U$0/
+  - derive/^./\U$0/
   # 前 2~10 个字母大写
   - derive/^([a-z]{2})/\U$1/
   - derive/^([a-z]{3})/\U$1/
@@ -131,9 +132,6 @@ algebra_common:
   - derive/^([a-z]{8})/\U$1/
   - derive/^([a-z]{9})/\U$1/
   - derive/^([a-z]{10})/\U$1/
-  # 派生中英混输词库（词库编码以ⓘ开头），只派生出原始拼写与全小写
-  - derive/^ⓘ(.+)$/$1/
-  - derive/^ⓘ(.+)$/\L$1/
 
 # 全拼
 algebra_rime_ice:
@@ -158,6 +156,8 @@ algebra_rime_ice:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jiu/
+    - derive/\+/jia/
+    - derive/#/jing/
 # 自然码双拼
 algebra_double_pinyin:
   __include: algebra_common
@@ -181,6 +181,8 @@ algebra_double_pinyin:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jq/
+    - derive/\+/jw/
+    - derive/#/jy/
 # 小鹤双拼
 algebra_flypy:
   __include: algebra_common
@@ -204,6 +206,8 @@ algebra_flypy:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jq/
+    - derive/\+/jx/
+    - derive/#/jk/
 # 微软双拼
 algebra_mspy:
   __include: algebra_common
@@ -228,6 +232,8 @@ algebra_mspy:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jq/
+    - derive/\+/jw/
+    - derive/#/j;/
 # 搜狗双拼
 algebra_sogou:
   __include: algebra_common
@@ -252,6 +258,8 @@ algebra_sogou:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jq/
+    - derive/\+/jw/
+    - derive/#/jy/
 # 智能ABC双拼
 algebra_abc:
   __include: algebra_common
@@ -276,6 +284,8 @@ algebra_abc:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jr/
+    - derive/\+/jd/
+    - derive/#/jy/
 # 紫光双拼
 algebra_ziguang:
   __include: algebra_common
@@ -300,3 +310,5 @@ algebra_ziguang:
     - derive/7/qi/
     - derive/8/ba/
     - derive/9/jj/
+    - derive/\+/jx/
+    - derive/#/j;/

@@ -5,7 +5,7 @@
 
 ---
 name: xhup.full.code.chars
-version: "v10.9k"
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -55,7 +55,7 @@ use_preset_vocabulary: false
 吧	bakb
 耙	balb
 粑	bamb
-滨	bbdb
+殡	bbdb
 瀑	bcdu
 爆	bchu
 暴	bcou
@@ -90,6 +90,7 @@ use_preset_vocabulary: false
 编	bmsc
 遍	bmzc
 标	bnmx
+卜	bold
 博	bouc
 般	bovy
 捕	buff
@@ -263,6 +264,7 @@ use_preset_vocabulary: false
 耳	eraa
 贰	eryr
 佴	erre
+铒	erje
 厄	eeiv
 嗯	enkx
 偾	ffrr
@@ -442,6 +444,8 @@ use_preset_vocabulary: false
 核	hemr
 合	herk
 衡	hgii
+恨	hfxg
+狠	hfqg
 行	hhii
 杭	hhmj
 怀	hkxb
@@ -568,6 +572,7 @@ use_preset_vocabulary: false
 碴	iaua
 耖	iclu
 钗	idji
+车	ieal
 沉	ifdj
 砗	ieui
 抻	iffu
@@ -996,12 +1001,13 @@ use_preset_vocabulary: false
 庙	mngy
 吗	makm
 嘛	makm
+妈	manm
 玟	mbww
 马	mava
 貌	mcve
 萌	mgco
 锰	mgjm
-茫	mhcw
+芒	mhcw
 蜜	mibi
 米	midm
 弥	migx
@@ -1195,6 +1201,7 @@ use_preset_vocabulary: false
 慊	qmxn
 慊	qpxn
 巯	qqvv
+糗	qqmq
 蛆	quiq
 璩	quwu
 诎	quyi
@@ -1601,6 +1608,7 @@ use_preset_vocabulary: false
 胃	wwto
 凹	wala
 碗	wjuv
+惋	wjxv
 鼯	wujk
 杌	wumw
 婺	wusn
@@ -1699,6 +1707,7 @@ use_preset_vocabulary: false
 谢	xpyc
 宣	xrba
 绁	xpsu
+锈	xqjn
 轩	xrig
 玄	xrwy
 喧	xrka
@@ -2007,6 +2016,7 @@ use_preset_vocabulary: false
 𬤇	ybyt
 𬬩	yijy
 验	yjma
+柚	yzmy
 燠	yuhd
 杂	zajm
 吱	ziky

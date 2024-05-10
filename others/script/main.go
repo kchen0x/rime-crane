@@ -19,11 +19,8 @@ func main() {
 		case "t":
 			rime.Temp()
 			return
-		case "p":
-			rime.CheckPolyphone(rime.BasePath)
-			return
 		case "tp":
-			rime.Pinyin(filepath.Join(rime.RimeDir, "cn_dicts/temp"))
+			rime.Pinyin(filepath.Join(rime.RimeDir, "cn_dicts/temp.txt"))
 			return
 		}
 	}
@@ -53,6 +50,11 @@ func main() {
 	rime.Check(rime.TencentPath, 4)
 	fmt.Println("--------------------------------------------------")
 
+	// 检查同义多音字
+	rime.CheckPolyphone(rime.BasePath)
+	rime.CheckPolyphone(rime.ExtPath)
+	fmt.Println("--------------------------------------------------")
+
 	areYouOK()
 
 SORT:
@@ -62,13 +64,15 @@ SORT:
 	rime.Sort(rime.BasePath, 3)
 	rime.Sort(rime.ExtPath, 3)
 	rime.Sort(rime.TencentPath, 4)
+	rime.Sort(filepath.Join(rime.RimeDir, "en_dicts/en.dict.yaml"), 2)
 }
 
 func areYouOK() {
 	fmt.Println("Are you OK:")
 	var isOK string
 	_, _ = fmt.Scanf("%s", &isOK)
-	if strings.ToLower(isOK) != "ok" {
+	isOK = strings.ToLower(isOK)
+	if isOK != "ok" && isOK != "y" && isOK != "yes" {
 		os.Exit(123)
 	}
 }

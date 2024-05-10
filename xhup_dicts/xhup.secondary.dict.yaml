@@ -4,8 +4,8 @@
 #---config@码表别名=1.1 次选字词
 
 ---
-name: openfly.secondary
-version: "v10.9k"
+name: xhup.secondary
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -20,6 +20,7 @@ use_preset_vocabulary: false
 槟	bkm
 煸	bmh
 辨	bml
+孛	bou
 背景	bj
 北戴河	bdh
 帮倒忙	bdm
@@ -492,7 +493,6 @@ use_preset_vocabulary: false
 饥渴	jike
 兼职	jmvi
 机器	jiqi
-极为	jiww
 渐	jmdj
 绩	jisr
 汲	jidj
@@ -517,6 +517,7 @@ use_preset_vocabulary: false
 溅	jmd
 监	jml
 槛	jmm
+敫	jnb
 僭	jmr
 戬	jmy
 醮	jny
@@ -541,6 +542,7 @@ use_preset_vocabulary: false
 假如	jr
 即使	ju
 极致	jv
+极为	jw
 基本功	jbg
 几百年	jbn
 记不住	jbv
@@ -581,7 +583,7 @@ use_preset_vocabulary: false
 机智	jivi
 挤占	jivj
 畸形	jixk
-吉祥	jixl
+机箱	jixl
 积压	jiya
 觊觎	jiyu
 加减乘除	jjii
@@ -875,7 +877,6 @@ use_preset_vocabulary: false
 憩	qiq
 骞	qmb
 铅	qmj
-稽	qih
 祇	qipu
 醛	qryw
 情况	qk
@@ -891,7 +892,7 @@ use_preset_vocabulary: false
 情人节	qrj
 岂不快哉	qbkz
 曲不离口	qblk
-亲手	qbuz
+禽兽	qbuz
 取长补短	qibd
 千疮百孔	qibk
 七点	qidm
@@ -1242,7 +1243,6 @@ use_preset_vocabulary: false
 支出	viiu
 纸巾	vijb
 致敬	vijk
-指甲	vijx
 争长论短	vild
 智力	vili
 知名	vimk

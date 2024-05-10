@@ -4,8 +4,8 @@
 #---config@码表别名=1.1 随心码
 
 ---
-name: openfly.whimsicality
-version: "v10.9k"
+name: xhup.whimsicality
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...

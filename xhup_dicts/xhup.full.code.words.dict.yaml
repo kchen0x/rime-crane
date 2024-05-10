@@ -6,7 +6,7 @@
 
 ---
 name: xhup.full.code.words
-version: "v10.9k"
+version: "v10.9s"
 sort: by_weight
 use_preset_vocabulary: false
 ...
@@ -103,7 +103,6 @@ use_preset_vocabulary: false
 凡人	fjrf
 反之	fjvi
 抚慰	fuww
-废了	fwle
 费时	fwui
 飞舞	fwwu
 分门别类	fmbl
@@ -193,6 +192,7 @@ use_preset_vocabulary: false
 假如	jxru
 举例	juli
 浆糊	jlhu
+极为	jiww
 奖金	jljb
 剑鞘	jmqn
 监听	jmtk
@@ -503,36 +503,3 @@ use_preset_vocabulary: false
 在情在理	zqzl
 宗师	zsui
 座位	zoww
-按时	anui#固
-按到	andc#固
-而是	erui#固
-反应	fjyk#固
-成为	igww#固
-传统	irts#固
-即可	jike#固
-简单	jmdj#固
-计算	jisr#固
-简直	jmvi#固
-极其	jiqi#固
-几位	jiww#固
-联系	lmxi#固
-每周	mwvz#固
-美丽	mwli#固
-期间	qijm#固
-任务	rfwu#固
-台湾	tdwj#固
-时间	uijm#固
-水平	uvpk#固
-试试	uiui#固
-神似	ufsi#固
-知道	vidc#固
-只能	ving#固
-只是	viui#固
-只会	vihv#固
-修正	xqvg#固
-小时	xnui#固
-现金	xmjb#固
-一下	yixx#固
-一直	yivi#固
-一片	yipm#固
-在线	zdxm#固
