@@ -37,11 +37,6 @@ local command = {
   ["iOS"] = {},
 }
 local option = {
-  ["oei"] = {
-    ["name"] = "openfly_enable_2nd_short",
-    ["type"] = "list",
-    ["value"] = {true, false},
-  },
   ["ojf"] = {
     ["name"] = "simplification",
     ["type"] = "toggle",
@@ -57,10 +52,6 @@ local function restore_saved_options(key, env)
     local swt = env.switcher
     local ctx = env.engine.context
     local conf = swt.user_config
-    if swt:is_auto_save("openfly_enable_2nd_short") and conf ~= nil then
-      local state = conf:get_bool("var/option/openfly_enable_2nd_short")
-      ctx:set_option("openfly_enable_2nd_short", state)
-    end
   end
 end
 
