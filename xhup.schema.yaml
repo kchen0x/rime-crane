@@ -179,7 +179,8 @@ preset_color_schemes:
     candidate_back_color: 0xffffff                    # 次选背景色
     comment_text_color: 0x555555                      # 次选提示字母色
     # horizontal: true                        # 候选窗横向显示
-    font_point: 16                          # 候选窗文字字号
+    font_point: 18                          # 候选窗文字字号
+    comment_font_point: 16                  # 提示文字大小
     label_font_point: 12                    # 候选窗编号字号
     # inline_preedit: true                    # 开启嵌入编码
     # inline_candidate: true                  # 开启嵌入候选
