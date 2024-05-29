@@ -1,6 +1,6 @@
 # 凇鹤拼音
 
-![demo](./others/demo_crane.png)
+![demo](./others/demo_crane.webp)
 
 整合了雾凇拼音和小鹤双拼/音形方案的拼音输入法，简称「凇鹤拼音」。
 
