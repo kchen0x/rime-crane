@@ -88,12 +88,15 @@ style:
   spacing: 10
   #candidate_format: '%c. %@'
   #base_offset: 6
-  font_face: 'Lucida Grande'
-  font_point: 21
-  #label_font_face: 'Lucida Grande'
-  label_font_point: 18
-  #comment_font_face: 'Lucida Grande'
-  comment_font_point: 18
+  # #候选字体
+  font_face: "Consolas, LXGW WenKai, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/font_point: 15 #主字体字号
+  # #滤镜内容字体
+  comment_font_face: "Consolas, TumanPUA, LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/comment_font_point: 15 # 滤镜内容字号
+  # #候选前编号标志字体
+  label_font_face: "LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
+  #style/label_font_point: 15 #候选前编号标志字号
 
 
 # 皮肤列表
