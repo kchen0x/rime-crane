@@ -4,7 +4,7 @@
 schema:
   schema_id: xhup
   name: 小鹤音形
-  version: "v10.9s"
+  version: "v10.9v"
   author:
     - 方案设计：何海峰 <flypy@qq.com>
     - 方案调整：水猫 <kchen0x@gmail.com>
