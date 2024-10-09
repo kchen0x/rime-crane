@@ -151,10 +151,12 @@ recognizer:
 menu:
   page_size: 5      # 候选项数
 
+
 style:
   color_scheme: crane
   color_scheme_dark: crane
-  horizontal: true
+  horizontal: true  # 新版已不生效，新版使用 candidate_list_layout 来控制
+  candidate_list_layout: linear
 
 preset_color_schemes:
   # 凇鹤版小鹤双拼输入法皮肤

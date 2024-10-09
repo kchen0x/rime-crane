@@ -4,6 +4,6 @@
 patch:
   speller/max_code_length: 100 # 提高最大编码长度，可以实现空格确认再上屏
   speller/auto_select: false # 关闭自动上屏
-  style/horizontal: true # 候选窗横向显示
+  style/candidate_list_layout: linear # 候选窗横向显示
   style/inline_preedit: true # 按键编码是否嵌入到输入框
   style/inline_candidate: false # 候选词是否嵌入到输入框，开启这个功能后，候选词会覆盖输入框，不建议开启
