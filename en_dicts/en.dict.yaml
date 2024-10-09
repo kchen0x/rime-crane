@@ -14,7 +14,7 @@
 # 转化应当大写的单词
 ---
 name: en
-version: "2024-06-10"
+version: "2024-07-13"
 sort: by_weight
 ...
 # +_+
@@ -1412,6 +1412,7 @@ auth	auth
 authentic	authentic
 authenticated	authenticated
 authentication	authentication
+authenticator	authenticator
 authenticity	authenticity
 author	author
 authored	authored
@@ -6526,6 +6527,7 @@ epic	epic
 epidemic	epidemic
 epidemiology	epidemiology
 epilepsy	epilepsy
+epilogue	epilogue
 epinions	epinions
 episcopal	episcopal
 episode	episode
@@ -7919,9 +7921,6 @@ Gambia	Gambia
 gamble	gamble
 gambling	gambling
 game	game
-gameboy	gameboy
-gamecube	gamecube
-GameFAQs	GameFAQs
 gameplay	gameplay
 gamer	gamer
 gamers	gamers
@@ -10212,7 +10211,6 @@ jasmine	jasmine
 Jason	Jason
 jasper	jasper
 Java	Java
-JavaScript	JavaScript
 jaw	jaw
 jaws	jaws
 jay	jay
@@ -10364,8 +10362,6 @@ JPEG	JPEG
 JPG	JPG
 # jpy	jpy
 # jr	jr
-# js	js
-JSP	JSP
 # jt	jt
 # ju	ju
 Juan	Juan
