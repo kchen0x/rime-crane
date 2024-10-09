@@ -106,7 +106,7 @@ http://www.keyboard-layout-editor.com/#/
 克隆本仓库到本地（不要删除）。进入仓库目录，将本地目录创建软链接到 Rime 的配置目录：
 
 ```
-rm -rf ~/Library/Rime && ln -s . ~/Library/Rime
+rm -rf ~/Library/Rime && ln -sif `pwd` ~/Library/Rime
 ```
 
 这样的好处是，更新时只需要回到仓库目录运行 `git pull` 即可。

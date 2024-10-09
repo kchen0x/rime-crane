@@ -1,0 +1,9 @@
+##  一些常用的设置项。找到需要进行的设置所在的行，
+##  取消注释（删除行开头的单个 # 符号）即可启用该设置项。
+##  注意不要删除前面的空格，YAML 文件的缩进比较严格，缩进不对容易报错。
+patch:
+  speller/max_code_length: 100 # 提高最大编码长度，可以实现空格确认再上屏
+  speller/auto_select: false # 关闭自动上屏
+  style/horizontal: true # 候选窗横向显示
+  style/inline_preedit: true # 按键编码是否嵌入到输入框
+  style/inline_candidate: false # 候选词是否嵌入到输入框，开启这个功能后，候选词会覆盖输入框，不建议开启

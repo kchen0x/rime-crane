@@ -1,0 +1,3 @@
+patch:
+  # 以下是双拼候选编码框的输出编码，不自动转为全拼
+  translator/preedit_format: []

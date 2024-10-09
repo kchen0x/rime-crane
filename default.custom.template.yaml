@@ -1,0 +1,29 @@
+# customization:
+#   distribution_code_name: Weasel
+#   distribution_version: 0.14.3
+#   generator: "Rime::SwitcherSettings"
+#   modified_time: "Fri Sep 23 08:36:10 2022"
+#   rime_version: 1.7.3
+# patch:
+#   schema_list:
+#     - {schema: tiger}
+#     - {schema: tigress}
+#     - {schema: PY_c}
+#   "switcher/hotkeys":  # 将默认的 F4热键 更改为ctrl+~
+#     - "Control+grave"
+#     - "Control+F8"
+    # - "F4"
+    # 如果想用F4来切换，把上一行，行首的#删去
+#左Shift键输入字符直接切换为英文上屏，输入状态变为英文。
+  # ascii_composer/good_old_caps_lock: true
+  # ascii_composer/switch_key:
+    # Caps_Lock: clear # 转大写并清屏
+    #  如果要把 Caps Lock 设为只改变字母的大小写而不做中西文切换，可将 Caps_Lock 对应的切换方式设为 noop
+    # Control_L: noop # 使其主动失效
+    # Control_R: noop
+    # Eisu_toggle: clear
+    # Shift_L: commit_code
+    # Shift_R: commit_code
+    # inline_asci 在输入法的临时西文编辑区內输入字母、数字、符号、空格等，回车上屏后自动复位到中文
+    # commit_code 已输入的编码字符上屏并切换至西文输入模式
+    # commit_text 候选框内的文字上屏并切换至西文输入模式
