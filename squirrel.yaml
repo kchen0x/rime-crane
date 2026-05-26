@@ -8,68 +8,37 @@
 # 鼠须管界面配置指南： https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/鼠鬚管介面配置指南.md
 # 鼠须管作者写的图形化的皮肤设计器： https://github.com/LEOYoon-Tsaw/Squirrel-Designer
 
+# Squirrel 部分命令行选项：
+# squirrel="/Library/Input Methods/Squirrel.app/Contents/MacOS/Squirrel"
+# --quit：退出所有 Squirrel 进程
+# --reload：重新部署
+# --sync：触发同步用户数据
+# --build：构建
+# --help：帮助输出帮助文本
+
 
 # 要比共享目录的同名文件的 config_version 大才可以生效
-config_version: '2023-02-27'
+config_version: '2026-01-31'  # 对应的鼠须管版本: 1.1.2
 
 
-# options: last | default | _custom_
-# last: the last used latin keyboard layout
-# default: US (ABC) keyboard layout
-# _custom_: keyboard layout of your choice, e.g. 'com.apple.keylayout.USExtended' or simply 'USExtended'
-keyboard_layout: default
-# for veteran chord-typist
-chord_duration: 0.1  # seconds
-# options: always | never | appropriate
+# 键盘布局  last | default | _custom_
+# last: 上次使用的英文键盘布局
+# default: US (ABC)
+# _custom_: 自定义，例如 'com.apple.keylayout.USExtended' 或者 'USExtended'
+keyboard_layout: last
+# 并击输入  秒
+chord_duration: 0.1
+# 何时显示通知  always | never | appropriate
 show_notifications_when: appropriate
 
 
 # ascii_mode、inline、no_inline、vim_mode 等等设定
 # 可参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
 app_options:
-  com.apple.Spotlight:
-    ascii_mode: true
-  com.alfredapp.Alfred:
-    ascii_mode: true
-  com.runningwithcrayons.Alfred-2:
-    ascii_mode: true
-  com.blacktree.Quicksilver:
-    ascii_mode: true
-  com.apple.Terminal:
-    ascii_mode: true
-    no_inline: true
-  com.googlecode.iterm2:
-    ascii_mode: true
-    no_inline: true
-  org.vim.MacVim:
-    ascii_mode: true  # 初始爲西文模式
-    no_inline: true   # 不使用行內編輯
-    vim_mode: true    # 退出VIM插入模式自動切換輸入法狀態
-  com.apple.dt.Xcode:
-    ascii_mode: true
-  com.barebones.textwrangler:
-    ascii_mode: true
-  com.macromates.TextMate.preview:
-    ascii_mode: true
-  com.github.atom:
-    ascii_mode: true
-  com.microsoft.VSCode:
-    ascii_mode: true
-  com.sublimetext.2:
-    ascii_mode: true
-  org.gnu.Aquamacs:
-    ascii_mode: true
-  org.gnu.Emacs:
-    ascii_mode: true
-    no_inline: true
-  co.zeit.hyper:
-    ascii_mode: true
-  com.google.Chrome:
-    # 規避 https://github.com/rime/squirrel/issues/435
-    inline: true
-  ru.keepcoder.Telegram:
-    # 規避 https://github.com/rime/squirrel/issues/475
-    inline: true
+  # com.apple.Spotlight:
+  #   ascii_mode: true    # 开启默认英文
+  # com.microsoft.VSCode:
+  #   ascii_mode: false   # 关闭默认英文
 
 
 style:
@@ -77,26 +46,39 @@ style:
   color_scheme: purity_of_form_custom
   color_scheme_dark: purity_of_form_custom
 
-  # 预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
-  text_orientation: horizontal  # horizontal | vertical
-  inline_preedit: true
-  corner_radius: 10
-  hilited_corner_radius: 0
-  border_height: 0
-  border_width: 0
-  line_spacing: 5
-  spacing: 10
-  #candidate_format: '%c. %@'
-  #base_offset: 6
-  # #候选字体
-  font_face: "Consolas, LXGW WenKai, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
-  #style/font_point: 15 #主字体字号
-  # #滤镜内容字体
-  comment_font_face: "Consolas, TumanPUA, LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
-  #style/comment_font_point: 15 # 滤镜内容字号
-  # #候选前编号标志字体
-  label_font_face: "LXGW WenKai GB Screen, SimSun, SimSun-ExtB, SimSun-ExtG, TH-Tshyn-P0, TH-Tshyn-P1, TH-Tshyn-P2, TH-Tshyn-P16"
-  #style/label_font_point: 15 #候选前编号标志字号
+  # 以下是预设选项。如果皮肤没写，则使用这些属性；如果皮肤写了，使用皮肤的。
+
+  # 候选框与文字的排列方式
+  candidate_list_layout: stacked  # stacked | linear       皮肤横竖排显示是调整这个
+  text_orientation: horizontal    # horizontal | vertical  文字方向
+  # 拼音或词句是否显示在键入位置
+  inline_preedit: true            # true | false  键入码显示位置
+  inline_candidate: false         # true | false  选中词显示位置
+
+  memorize_size: true             # true | false  候选窗口吸附到屏幕边缘，以减少位置跳动
+  mutual_exclusive: false         # true | false  半透明颜色进行叠加计算
+  translucency: false             # true | false  磨砂背景，仅在背景颜色为透明时可见
+  show_paging: false              # true | false  上下翻页可用的小箭头提示
+  corner_radius: 7                # 外边框 圆角半径
+  hilited_corner_radius: 0        # 选中框 圆角半径
+  border_height: -2               # 外边框 高
+  border_width: -2                # 外边框 宽
+  line_spacing: 5                 # stacked竖向布局的行间距间距
+  spacing: 8                      # 非linear行内模式下，预编辑文本与候选框之间的间距
+  shadow_size: 0                  # 阴影大小
+  #surrounding_extra_expansion: 0 # 控制未高亮候选项背景相对于高亮项的大小，负值缩小，正值放大
+
+  # 候选项格式化
+  # %@ 和 %c 在鼠须管 1.0 弃用，%@ 等同于 "[candidate] [comment]"，%c 于等同 "[label]"
+  candidate_format: '[label]. [candidate] [comment]'
+
+  #base_offset: 0                 # 字基高
+  font_face: 'Avenir'
+  font_point: 16
+  #label_font_face: 'Avenir'
+  #label_font_point: 12
+  #comment_font_face: 'Avenir'
+  #comment_font_point: 16
 
 
 # 皮肤列表
@@ -115,9 +97,10 @@ preset_color_schemes:
     comment_font_point: 16
     # candidate_list_layout: stacked        # 候选项排列方向 stacked(默认) | linear
     # text_orientation: horizontal          # 文字排列方向 horizontal(默认) | vertical
-    inline_preedit: true                    # 拼音位于： 候选框 false | 行内 true
-    translucency: false                     # 磨砂： false | true
-    mutual_exclusive: false                 # 色不叠加： false | true
+    inline_preedit: true                    # 键入码（拼音）是否显示在键入位置 true | false
+    inline_candidate: false                 # 候选项（词句）是否显示在键入位置 true | false
+    translucency: false                     # 磨砂： true | false
+    mutual_exclusive: false                 # 色不叠加： true | false
     border_height: 0                        # 外边框 高
     border_width: 0                         # 外边框 宽
     corner_radius: 10                       # 外边框 圆角半径
@@ -145,8 +128,7 @@ preset_color_schemes:
     # border_color:                         # 外边框颜色
 
 
-  # 下面是内置的皮肤 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
-
+  # 下面是内置的皮肤 https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
 
   native:
     name: 系統配色
@@ -239,7 +221,7 @@ preset_color_schemes:
   purity_of_form:
     name: 純粹的形式／Purity of Form
     author: 雨過之後、佛振
-    text_color: 0xc2c2c2
+    text_color: 0xc2c222
     back_color: 0x444444
     candidate_text_color: 0xeeeeee
     hilited_text_color: 0xeeeeee
@@ -267,9 +249,14 @@ preset_color_schemes:
     candidate_text_color: 0x30bb55
     back_color: 0xee000000
     border_color: 0x1010a0
+    border_width: 2
+    border_height: 2
+    corner_radius: 8
+    hilited_corner_radius: 8
     hilited_text_color: 0xfecb96
     hilited_back_color: 0x000000
     hilited_candidate_text_color: 0x70ffaf
+    hilited_candidate_label_color: 0x40cf7f
     hilited_candidate_back_color: 0x00000000
     comment_text_color: 0x1010d0
     hilited_comment_text_color: 0x1010f0
@@ -304,7 +291,7 @@ preset_color_schemes:
   clean_white:
     name: 简约白／Clean White
     author: Chongyu Zhu <lembacon@gmail.com>, based on 搜狗「简约白」
-    horizontal: true
+    candidate_list_layout: linear
     candidate_format: '%c %@'
     corner_radius: 6
     border_height: 6
@@ -324,7 +311,7 @@ preset_color_schemes:
   apathy:
     name: 冷漠／Apathy
     author: LIANG Hai
-    horizontal: true  # 水平排列
+    candidate_list_layout: linear  # 水平排列
     inline_preedit: true #单行显示，false双行显示
     candidate_format: "%c\u2005%@\u2005"  # 编号 %c 和候选词 %@ 前后的空间
     corner_radius: 5  #候选条圆角
@@ -343,7 +330,7 @@ preset_color_schemes:
   dust:
     name: 浮尘／Dust
     author: Superoutman <asticosmo@gmail.com>
-    horizontal: true  # 水平排列
+    candidate_list_layout: linear  # 水平排列
     inline_preedit: true #单行显示，false双行显示
     candidate_format: "%c\u2005%@\u2005"  # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
     corner_radius: 2  #候选条圆角
@@ -368,7 +355,7 @@ preset_color_schemes:
   mojave_dark:
     name: 沙漠夜／Mojave Dark
     author: xiehuc <xiehuc@gmail.com>
-    horizontal: true                        # 水平排列
+    candidate_list_layout: linear           # 水平排列
     inline_preedit: true                    # 单行显示，false双行显示
     candidate_format: "%c\u2005%@"    # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
     corner_radius: 5                        # 候选条圆角
@@ -396,34 +383,63 @@ preset_color_schemes:
     name: 曬經・日／Solarized Light
     author: 雪齋 <lyc20041@gmail.com>
     color_space: display_p3 # Only available on macOS 10.12+
-    back_color: 0xf0E5F6FB #Lab 97, 0, 10
-    border_color: 0xf0EDFFFF #Lab 100, 0, 10
-    preedit_back_color: 0xf0D7E8ED #Lab 92, 0, 10
-    candidate_text_color: 0x3942CB #Lab 50, 65, 45
-    label_color: 0x2566C6 #Lab 55, 45, 65
-    comment_text_color: 0x8144C2 #Lab 50, 65, -5
-    text_color: 0x756E5D #Lab 45, -7, -7
-    hilited_back_color: 0xf0C9DADF #Lab 87, 0, 10
-    hilited_candidate_back_color: 0x403516 #Lab 20, -12, -12
-    hilited_candidate_text_color: 0x989F52 #Lab 60, -35, -5
-    hilited_candidate_label_color: 0xCC8947 #Lab 55, -10, -45
-    hilited_comment_text_color: 0x289989 #Lab 60, -20, 65
-    hilited_text_color: 0xBE706D #Lab 50, 15, -45
+    back_color: 0xF0E5F6FB                  #Lab 97 , 0 , 10
+    border_color: 0xEDFFFF                  #Lab 100, 0 , 10
+    preedit_back_color: 0x403516            #Lab 20 ,-12,-12
+    #candidate_back_color: 0x403516         #Lab 20 ,-12,-12
+    candidate_text_color: 0x595E00          #Lab 35 ,-35,-5
+    label_color: 0xA36407                   #Lab 40 ,-10,-45
+    comment_text_color: 0x005947            #Lab 35 ,-20, 65
+    text_color: 0xA1A095                    #Lab 65 ,-5 ,-2
+    hilited_back_color: 0x4C4022            #Lab 25 ,-12,-12
+    hilited_candidate_back_color: 0xD7E8ED  #Lab 92 , 0 , 10
+    hilited_candidate_text_color: 0x3942CB  #Lab 50 , 65, 45
+    hilited_candidate_label_color: 0x2566C6 #Lab 55 , 45, 65
+    hilited_comment_text_color: 0x8144C2    #Lab 50 , 65,-5
+    hilited_text_color: 0x2C8BAE            #Lab 60 , 10, 65
 
   solarized_dark:
     name: 曬經・月／Solarized Dark
     author: 雪齋 <lyc20041@gmail.com>
-    color_space: display_p3 # Only available on macOS 10.12+
-    back_color: 0xf0352A0A #Lab 15, -12, -12
-    border_color: 0xf02A1F00 #Lab 10, -12, -12
-    preedit_back_color: 0xf0403516 #Lab 20, -12, -12
-    candidate_text_color: 0x989F52 #Lab 60, -35, -5
-    label_color: 0xCC8947 #Lab 55, -10, -45
-    comment_text_color: 0x289989 #Lab 60, -20, 65
-    text_color: 0xA1A095 #Lab 65, -05, -02
-    hilited_back_color: 0xf04C4022 #Lab 25, -12, -12
-    hilited_candidate_back_color: 0xD7E8ED #Lab 92, 0, 10
-    hilited_candidate_text_color: 0x3942CB #Lab 50, 65, 45
-    hilited_candidate_label_color: 0x2566C6 #Lab 55, 45, 65
-    hilited_comment_text_color: 0x8144C2 #Lab 50, 65, -5
-    hilited_text_color: 0x2C8BAE #Lab 60, 10, 65
+    back_color: 0xF0352A0A                  #Lab 15 ,-12,-12
+    border_color: 0x2A1F00                  #Lab 10 ,-12,-12
+    preedit_back_color: 0xD7E8ED            #Lab 92 , 0 , 10
+    #candidate_back_color: 0xD7E8ED         #Lab 92 , 0 , 10
+    candidate_text_color: 0x7389FF          #Lab 75 , 65, 45
+    label_color: 0x478DF4                   #Lab 70 , 45, 65
+    comment_text_color: 0xC38AFF            #Lab 75 , 65,-5
+    text_color: 0x756E5D                    #Lab 45 ,-7 ,-7
+    hilited_back_color: 0xC9DADF            #Lab 87 , 0 , 10
+    hilited_candidate_back_color: 0x403516  #Lab 20 ,-12,-12
+    hilited_candidate_text_color: 0x989F52  #Lab 60 ,-35,-5
+    hilited_candidate_label_color: 0xCC8947 #Lab 55 ,-10,-45
+    hilited_comment_text_color: 0x289989    #Lab 60 ,-20, 65
+    hilited_text_color: 0xBE706D            #Lab 50 , 15,-45
+
+  retro_green:
+    name: 綠色熒光屏
+    author: 佛振 <chen.sst@gmail.com>
+    text_color: 0x00FF00
+    back_color: 0x000000
+    label_color: 0x00FF00
+    hilited_candidate_text_color: 0x000000
+    hilited_candidate_back_color: 0x00FF00
+    hilited_candidate_label_color: 0x000000
+    corner_radius: 16
+    border_width: 2
+    border_height: 2
+    border_color: 0x00FF00
+
+  retro_orange:
+    name: 琥珀色熒光屏
+    author: 佛振 <chen.sst@gmail.com>
+    text_color: 0x0093FF
+    back_color: 0x000000
+    label_color: 0x0093FF
+    hilited_candidate_text_color: 0x000000
+    hilited_candidate_back_color: 0x0093FF
+    hilited_candidate_label_color: 0x000000
+    corner_radius: 16
+    border_width: 2
+    border_height: 2
+    border_color: 0x0093FF

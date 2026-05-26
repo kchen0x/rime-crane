@@ -63,8 +63,6 @@ end
 
 -- 数值转换为中文
 local function number2cnChar(num, flag, digitUnit, wordFigure) --flag=0中文小写反之为大写
-    local result = ""
-
     if tonumber(flag) < 1 then
         digitUnit = digitUnit or { [1] = "万", [2] = "亿" }
         wordFigure = wordFigure or { [1] = "〇", [2] = "一", [3] = "十", [4] = "元" }
@@ -73,6 +71,7 @@ local function number2cnChar(num, flag, digitUnit, wordFigure) --flag=0中文小
         wordFigure = wordFigure or { [1] = "零", [2] = "壹", [3] = "拾", [4] = "元" }
     end
     local lens = string.len(num)
+    local result
     if lens < 5 then
         result = formatNum(num, flag)
     elseif lens < 9 then
@@ -130,10 +129,16 @@ local function number_translatorFunc(num)
         { number2cnChar(numberPart.int, 0) ..
         decimal_func(numberPart.dec, { [1] = "角", [2] = "分", [3] = "厘", [4] = "毫" },
             { [0] = "〇", "一", "二", "三", "四", "五", "六", "七", "八", "九" }), "〔金额小写〕" })
-    table.insert(result,
-        { number2cnChar(numberPart.int, 1) ..
-        decimal_func(numberPart.dec, { [1] = "角", [2] = "分", [3] = "厘", [4] = "毫" },
-            { [0] = "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" }), "〔金额大写〕" })
+
+    local number2cnCharInt = number2cnChar(numberPart.int, 1)
+    local number2cnCharDec = decimal_func(numberPart.dec, { [1] = "角", [2] = "分", [3] = "厘", [4] = "毫" }, { [0] = "零", "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" })
+    if string.len(numberPart.int) > 4 and number2cnCharInt:find('^拾[壹贰叁肆伍陆柒捌玖]?') and number2cnCharInt:find('[万亿]')  then -- 简易地规避 utf8 匹配问题
+        local number2cnCharInt_var = number2cnCharInt:gsub('^拾', '壹拾')
+        table.insert(result, { number2cnCharInt_var .. number2cnCharDec , "〔金额大写〕"})
+        -- 会计书写要求 https://github.com/iDvel/rime-ice/issues/989
+    else
+        table.insert(result, { number2cnCharInt .. number2cnCharDec , "〔金额大写〕"})
+    end
     return result
 end
 

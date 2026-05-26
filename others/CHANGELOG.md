@@ -2,6 +2,25 @@
 
 除日常更新词库外的一些主要更新 🆕 及破坏性变更 ⚠️。
 
+## 2026-05-26 ⚠️
+
+同步上游雾凇拼音至 2026-03-08 版本（tag: 2026.03.26）。
+
+- ⚠️ 删除 `rime.lua`，Lua 模块全面迁移至 `*` 前缀自动发现语法
+- ⚠️ `calculator_translator.lua` 重命名为 `calc_translator.lua`
+- 🆕 新增 `lua/uuid.lua`：输入 `uuid` 生成 UUID v4
+- 🆕 新增 `lua/force_gc.lua`：暴力 GC，稳定内存占用
+- 🆕 新增 `lua/convert_ar_num_to_zh.lua`：阿拉伯数字转中文
+- 🆕 `date_translator.lua` 新增 `rqzh`/`rqen`（全拼）、`datezh`/`dateen`（双拼）自定义日期格式
+- 🆕 `select_character.lua` 以词定字支持长句
+- 🆕 `default.yaml` 新增 `navigator` 节（音节/字符级光标移动，需 librime >= 1.16.0）
+- 🆕 `default.yaml` 新增 `digit_separators` 及小键盘映射
+- 全量更新 `cn_dicts/`、`en_dicts/`、`opencc/` 词库
+- 新增 `en_dicts/cn_en_jiajia.txt`（拼音加加双拼中英混输）
+- 更新 `squirrel.yaml` 至 2026-01-31
+- `symbols_v.yaml` 移除了 emoji 集合
+- 自定义字体设置移至 `squirrel.custom.yaml`（防止后续同步覆盖）
+
 ## 2024-05-15
 
 - `select_character.lua`: 🆕 当候选字数为 1 时，快捷键使其上屏（为旧版行为）；
