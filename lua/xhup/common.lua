@@ -7,23 +7,37 @@
 
 --- detect_os 函数用于检测当前运行的操作系统类型。
 -- @return 返回一个字符串，表示当前运行的操作系统类型。
+local cached_os = nil
+
 local function detect_os()
+    if cached_os ~= nil then
+        return cached_os
+    end
     local sys = ""
     local sep = package.config:sub(1, 1)
     if sep == "\\" then
         sys = "Windows"
     else
-        local f = io.open("/usr/bin/uname", "r")
         local h = os.getenv("HOME")
-        if f ~= nil then
-            io.close(f)
-            sys = io.popen("uname -s"):read("*l")
-        elseif string.find(h, "/private/var/mobile/") ~= nil then
+        if h and string.find(h, "/private/var/mobile/") ~= nil then
             sys = "iOS"
         else
-            sys = "Others"
+            local p = io.open("/proc/version", "r")
+            if p ~= nil then
+                io.close(p)
+                sys = "Linux"
+            else
+                local pipe = io.popen("uname -s 2>/dev/null")
+                if pipe ~= nil then
+                    sys = pipe:read("*l") or "Others"
+                    pipe:close()
+                else
+                    sys = "Others"
+                end
+            end
         end
     end
+    cached_os = sys
     return sys
 end
 
